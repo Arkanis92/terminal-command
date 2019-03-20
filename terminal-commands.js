@@ -8,3 +8,17 @@ module.exports.ls = () => {
     console.log(filesToString);
   });
 };
+
+module.exports.touch = () => {
+  fs.writeFile('newFile.txt', 'Input data here', 'utf8', (err) => {
+    if(err) throw err;
+    console.log('success');
+  })
+};
+
+module.exports.mkdir = () => {
+  fs.mkdir('./', (err) => {
+    if (err) throw err;
+    console.log('success');
+  });
+};
